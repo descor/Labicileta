@@ -4,6 +4,7 @@
 			<div class="row">
 				<div class="col-xs-6">
 					<p>Mario San Miguel (868924175-629758596)</p>
+					<?php print_r($datsesion); ?>
 				</div>
 				<div class="col-xs-6">
 					<ul class="list-inline text-right">

@@ -1,3 +1,13 @@
+<div>
+		<a href='<?php echo site_url('auth/index')?>'>Gestion Usuarios</a> |
+		<a href='<?php echo site_url('noticias/nuevasnot')?>'>Noticias</a> |
+		<a href='<?php echo site_url('noticias/Eventos')?>'>Eventos</a> |
+		<a href='<?php echo site_url('welcome/index')?>'>Principal</a> | 
+		<a href='<?php echo site_url('examples/employees_management')?>'>Employees</a> |		 
+		<a href='<?php echo site_url('examples/film_management')?>'>Films</a> |
+		<a href='<?php echo site_url('auth/login')?>'>Cerrar Sesión</a>
+		
+	</div>
 <h1><?php echo lang('index_heading');?></h1>
 <p><?php echo lang('index_subheading');?></p>
 

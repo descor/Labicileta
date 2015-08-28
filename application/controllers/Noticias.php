@@ -17,13 +17,37 @@ class Noticias extends CI_Controller {
  
     public function nuevasnot()
     {
+        if (!$this->ion_auth->logged_in())
+        {
+        redirect(‘auth/login’);
+        } 
+        else 
+        {
         $crud = new grocery_CRUD();
  
         $crud->set_table('noticias');
         $crud->set_field_upload('imgnoticia','img');
         $output = $crud->render();
  
-        $this->_example_output($output);                
+        $this->_example_output($output); 
+        }               
+    }
+    public function eventos()
+    {
+        if (!$this->ion_auth->logged_in())
+        {
+        redirect(‘auth/login’);
+        } 
+        else 
+        {
+        $crud = new grocery_CRUD();
+ 
+        $crud->set_table('eventos');
+        //$crud->set_field_upload('imgnoticia','img');
+        $output = $crud->render();
+ 
+        $this->_example_output($output); 
+        }               
     }
  
     function _example_output($output = null)

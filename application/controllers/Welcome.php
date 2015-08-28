@@ -20,6 +20,14 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		
+		if ($this->ion_auth->logged_in())
+        {
+        	$user = $this->ion_auth->user()->row();
+        }
+        else{
+        	$user = NULL; 
+        } 
 		$this->load->model('noticias');
 		$this->load->model('menu');
 		$this->load->model('eventos');
@@ -32,8 +40,9 @@ class Welcome extends CI_Controller {
 		$data = array('consulta' => $resul,
 						'consumenu' => $result1,
 						'consueventos' => $result2,
-						'consupelis' => $result3);
+						'consupelis' => $result3,
+						'datsesion'=>$user);
 		$this->load->view('main', $data);
-		$this->load->view('footer/pie');
+		$this->load->view('footer/pie',$data);
 	}
 }
